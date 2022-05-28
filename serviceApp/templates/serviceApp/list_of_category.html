@@ -1,0 +1,46 @@
+{% extends "serviceApp/layout.html" %}
+
+{% block body %}
+<div class="page-body">
+<div class="container-xl">
+    <div class="card">
+        <div class="card-header py-3 ">
+                      <div class="d-flex justify-content-between" style="width:100%">
+                          <div class="text-muted">   <h3 class="card-title">Categories</h3></div>
+                     <div class="text-muted">
+                    <a  class="btn btn-primary" href="{% url 'add-category'%}">Add Category</a>
+
+               </div>
+                      </div>
+
+
+                  </div>
+    </div>
+
+    <div class="row ">
+
+    {%for item in category_list%}
+        <div class="col-4">
+                <div class="card bg-form" >
+                  <div class="row">
+                    <div class="col-3">
+                        <a href="{% url 'show-category' item.id %}"> <img src="{{item.cat_image.url}}" class="w-100 h-100 object-cover" alt="Card side image"></a>
+                    </div>
+                    <div  class="col">
+                      <div class="card-body">
+                        <h3 class="card-title">{{item.cat_name}}</h3>
+                        <p class="text-muted">{{item.cat_details}}.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+{% endfor %}
+
+  </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "serviceApp/layout.html" %}
+
+{% block body %}
+<div class="page-body">
+
+    <div class="container-xl">
+<div class="row row-cards" >
+    <div class="col-1">
+    </div>
+    <div class="col-10">
+     <div class="card">
+
+
+ <div class="card-body" >
+
+         <div class="table-responsive" >
+                      <table class="table table-vcenter card-table text-center" >
+
+
+        {%for item in ser_obj%}
+
+<div class="col-12">
+                <div class="card bg-form" >
+                  <div class="row">
+                    <div class="col-3">
+                        <a href="#"> <img src="{{item.serv_Img.url}}" class="w-100 h-100 object-cover" alt="Card side image"></a>
+                    </div>
+                    <div  class="col ">
+                      <div class="card-body">
+                        <h3 class="card-title">{{item.serv_name}}</h3>
+
+    <p>Item Description :{{item.serv_details}}</p>
+
+     <p>{{item.serv_cat}}</p>
+     <p>{{item.date}}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </tbody>
+
+
+
+
+</table>
+
+
+
+
+                </div>
+              </div>
+
+
+
+
+</div>
+
+
+
+
+    </div>
+    <div class="col-1"></div>
+</div>
+
+
+
+
+
+
+</div>
+</div>
+
+
+{% endblock %}

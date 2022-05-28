@@ -1,0 +1,9 @@
+{% extends "serviceApp/layout.html" %}
+
+{% block body %}
+ <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ CatForm.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+{% endblock %}
